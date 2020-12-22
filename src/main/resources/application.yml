@@ -1,0 +1,9 @@
+server:
+  port: 8085
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: kekovasudi@gmail.com
+    password: dyjpfacumjmqrowr
+
