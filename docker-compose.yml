@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+  spring-mail-microservice:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: spring-mail-microservice
+    container_name: spring-mail-microservice
+    restart: unless-stopped
+    ports:
+      - 8085:8085
+      - 587:587
+
+
