@@ -9,4 +9,6 @@ public interface EmailService {
     void sendSimpleEmail(Mail mail);
 
     void sendComplexEmail(Mail mail) throws SendFailedException;
+
+    void sendSubscriptionMail(Mail mail) throws SendFailedException;
 }

@@ -64,4 +64,29 @@ public class EmailServiceImplementation implements EmailService {
 
         }
     }
+
+    @Override
+    public void sendSubscriptionMail(Mail mail) throws SendFailedException {
+        MimeMessage message = mailSender.createMimeMessage();
+
+        try{
+            MimeMessageHelper  helper = new MimeMessageHelper(message,MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
+
+            Context context = new Context();
+
+            context.setVariables(mail.getProps());
+
+            String html = templateEngine.process("subscription",context);
+
+            helper.setTo(mail.getMailTo());
+            helper.setText(html, true);
+            helper.setSubject(mail.getSubject());
+            helper.setFrom(mail.getFrom());
+
+            mailSender.send(message);
+
+        }catch(MessagingException ex){
+
+        }
+    }
 }
