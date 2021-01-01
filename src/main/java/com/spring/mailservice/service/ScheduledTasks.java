@@ -48,7 +48,7 @@ public class ScheduledTasks {
                 for (JsonNode user:data) {
 
                     //System.out.println("Email is "+user.findValue("email"));
-                    if(user.findValue("email").asText().equals("salmin.singano@gmail.com"))
+                    if(user.findValue("research_system_admin_role").asText().equals("ROLE_admin"))
                     {
 
                     }else{
