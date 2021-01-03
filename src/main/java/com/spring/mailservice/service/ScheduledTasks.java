@@ -55,7 +55,7 @@ public class ScheduledTasks {
                         Mail mail = new Mail();
                         mail.setMailTo(user.findValue("email").asText());
                         mail.setSubject("New calls");
-                        mail.setFrom("kekovasudi@gmail.com");
+                        mail.setFrom("duce.publicservice@gmail.com");
                         //mail.setText("This email is for verification of email");
 
                         Map<String,Object> model = new HashMap<String,Object>();
